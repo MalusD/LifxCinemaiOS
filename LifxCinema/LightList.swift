@@ -28,7 +28,14 @@ struct LightList: View {
     @State var showingAddLight = false
     
     // Func
-    
+    /*private func refreshLights() {
+        let adresses = lightDevice.map {$0.adresse}
+        
+        LIFXClient.getConnections(addresses: adresses as! [String], timeout: 0.25).done {
+            connections in
+            
+        }
+    }*/
     
     //Add Light button
     var addLightButton: some View {
@@ -47,7 +54,12 @@ struct LightList: View {
         NavigationView{
             List {
                 ForEach(lightDevice){ light in
-                    LightRow(lightDevice: light)
+                    NavigationLink(
+                        destination: LightDetail(lightDevice: light)
+                            .environment(\.managedObjectContext, self.managedObjectContext)
+                    ) {
+                        LightRow(lightDevice: light)
+                    }
                 }
             }
             .navigationBarTitle(Text("Lights"))

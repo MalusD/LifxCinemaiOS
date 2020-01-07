@@ -15,6 +15,7 @@
 		831CD87923C3BEAE0033A0C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 831CD87823C3BEAE0033A0C5 /* Assets.xcassets */; };
 		831CD87C23C3BEAE0033A0C5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 831CD87B23C3BEAE0033A0C5 /* Preview Assets.xcassets */; };
 		831CD87F23C3BEAE0033A0C5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 831CD87D23C3BEAE0033A0C5 /* LaunchScreen.storyboard */; };
+		8358C19723C4C5E0004B2C5E /* LightDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8358C19623C4C5E0004B2C5E /* LightDetail.swift */; };
 		8390A40C23C3C12B0026EAD5 /* LIFXClientExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8390A40B23C3C12B0026EAD5 /* LIFXClientExtensions.swift */; };
 		8390A40E23C3C1790026EAD5 /* PromiseKitExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8390A40D23C3C1790026EAD5 /* PromiseKitExtensions.swift */; };
 		8390A41023C3C2050026EAD5 /* NetworkExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8390A40F23C3C2050026EAD5 /* NetworkExtensions.swift */; };
@@ -35,6 +36,7 @@
 		831CD87B23C3BEAE0033A0C5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		831CD87E23C3BEAE0033A0C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		831CD88023C3BEAE0033A0C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8358C19623C4C5E0004B2C5E /* LightDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightDetail.swift; sourceTree = "<group>"; };
 		8390A40B23C3C12B0026EAD5 /* LIFXClientExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIFXClientExtensions.swift; sourceTree = "<group>"; };
 		8390A40D23C3C1790026EAD5 /* PromiseKitExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromiseKitExtensions.swift; sourceTree = "<group>"; };
 		8390A40F23C3C2050026EAD5 /* NetworkExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkExtensions.swift; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 				831CD86F23C3BEAD0033A0C5 /* AppDelegate.swift */,
 				831CD87123C3BEAD0033A0C5 /* SceneDelegate.swift */,
 				831CD87623C3BEAD0033A0C5 /* LightList.swift */,
+				8358C19623C4C5E0004B2C5E /* LightDetail.swift */,
 				83C634A823C3ECD0009D7394 /* LightRow.swift */,
 				83C634A623C3EB61009D7394 /* AddLight.swift */,
 				8390A40823C3C0F50026EAD5 /* Model */,
@@ -266,6 +269,7 @@
 				831CD87023C3BEAD0033A0C5 /* AppDelegate.swift in Sources */,
 				831CD87723C3BEAD0033A0C5 /* LightList.swift in Sources */,
 				831CD87223C3BEAD0033A0C5 /* SceneDelegate.swift in Sources */,
+				8358C19723C4C5E0004B2C5E /* LightDetail.swift in Sources */,
 				8390A41023C3C2050026EAD5 /* NetworkExtensions.swift in Sources */,
 				83C634A923C3ECD0009D7394 /* LightRow.swift in Sources */,
 			);
