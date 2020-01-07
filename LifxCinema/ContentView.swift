@@ -34,7 +34,6 @@ struct ContentView: View {
     var addLightButton: some View {
         Button(action: {
             self.showingAddLight.toggle()
-            self.refreshConnection()
         }) {
             Image(systemName: "plus.circle")
                 .imageScale(.large)
