@@ -1,5 +1,5 @@
 //
-//  ContentView.swift
+//  LightList.swift
 //  LifxCinema
 //
 //  Created by Jean-Sébastien POÜS on 06/01/2020.
@@ -13,7 +13,7 @@ import PromiseKit
 import Network
 
 
-struct ContentView: View {
+struct LightList: View {
     
     // CoreData Environment
     @Environment(\.managedObjectContext) var managedObjectContext
@@ -59,9 +59,9 @@ struct ContentView: View {
     }
 }
 
-struct ContentView_Previews: PreviewProvider {
+struct LightList_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        LightList()
           .environment(\.managedObjectContext, (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext)
     }
 }
