@@ -19,6 +19,7 @@
 		8390A40C23C3C12B0026EAD5 /* LIFXClientExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8390A40B23C3C12B0026EAD5 /* LIFXClientExtensions.swift */; };
 		8390A40E23C3C1790026EAD5 /* PromiseKitExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8390A40D23C3C1790026EAD5 /* PromiseKitExtensions.swift */; };
 		8390A41023C3C2050026EAD5 /* NetworkExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8390A40F23C3C2050026EAD5 /* NetworkExtensions.swift */; };
+		83B4CB0123C5317B009BE7DE /* HSBK.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B4CB0023C5317B009BE7DE /* HSBK.swift */; };
 		83C634A723C3EB61009D7394 /* AddLight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C634A623C3EB61009D7394 /* AddLight.swift */; };
 		83C634A923C3ECD0009D7394 /* LightRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C634A823C3ECD0009D7394 /* LightRow.swift */; };
 		83C634AB23C3EE17009D7394 /* LightDeviceExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C634AA23C3EE17009D7394 /* LightDeviceExtensions.swift */; };
@@ -40,6 +41,7 @@
 		8390A40B23C3C12B0026EAD5 /* LIFXClientExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIFXClientExtensions.swift; sourceTree = "<group>"; };
 		8390A40D23C3C1790026EAD5 /* PromiseKitExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromiseKitExtensions.swift; sourceTree = "<group>"; };
 		8390A40F23C3C2050026EAD5 /* NetworkExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkExtensions.swift; sourceTree = "<group>"; };
+		83B4CB0023C5317B009BE7DE /* HSBK.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HSBK.swift; sourceTree = "<group>"; };
 		83C634A623C3EB61009D7394 /* AddLight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLight.swift; sourceTree = "<group>"; };
 		83C634A823C3ECD0009D7394 /* LightRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightRow.swift; sourceTree = "<group>"; };
 		83C634AA23C3EE17009D7394 /* LightDeviceExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightDeviceExtensions.swift; sourceTree = "<group>"; };
@@ -94,6 +96,7 @@
 				8358C19623C4C5E0004B2C5E /* LightDetail.swift */,
 				83C634A823C3ECD0009D7394 /* LightRow.swift */,
 				83C634A623C3EB61009D7394 /* AddLight.swift */,
+				83B4CAFF23C53163009BE7DE /* SupportingViews */,
 				8390A40823C3C0F50026EAD5 /* Model */,
 				8390A40A23C3C1030026EAD5 /* Extensions */,
 				8390A40923C3C0FC0026EAD5 /* Ressources */,
@@ -137,6 +140,14 @@
 				83C634AA23C3EE17009D7394 /* LightDeviceExtensions.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		83B4CAFF23C53163009BE7DE /* SupportingViews */ = {
+			isa = PBXGroup;
+			children = (
+				83B4CB0023C5317B009BE7DE /* HSBK.swift */,
+			);
+			path = SupportingViews;
 			sourceTree = "<group>";
 		};
 		C22A332209286519AC22B2CB /* Frameworks */ = {
@@ -265,6 +276,7 @@
 				8390A40C23C3C12B0026EAD5 /* LIFXClientExtensions.swift in Sources */,
 				83C634AB23C3EE17009D7394 /* LightDeviceExtensions.swift in Sources */,
 				83C634A723C3EB61009D7394 /* AddLight.swift in Sources */,
+				83B4CB0123C5317B009BE7DE /* HSBK.swift in Sources */,
 				8390A40E23C3C1790026EAD5 /* PromiseKitExtensions.swift in Sources */,
 				831CD87023C3BEAD0033A0C5 /* AppDelegate.swift in Sources */,
 				831CD87723C3BEAD0033A0C5 /* LightList.swift in Sources */,

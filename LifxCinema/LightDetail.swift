@@ -21,19 +21,19 @@ struct LightDetail: View {
     @State private var power: Bool = false
     @State private var hue: Double = 0
     @State private var saturation: Double = 0
-    @State private var brightness: Float = 0
+    //@State private var brightness: Float = 0
     
     private func endEditing() {
         UIApplication.shared.endEditing()
     }
     
-    func changeBrightness() {
+    /*func changeBrightness() {
         print("SLider value changed to \(brightness)")
         LIFXClient.connect(host: .ipv4(try!(IPv4Address(self.lightDevice.adresse!)))).then {
             client in
             return client.light.setColor(color: .init(red: CGFloat(self.brightness), green: CGFloat(self.brightness), blue: CGFloat(self.brightness), alpha: CGFloat(self.brightness)))
         }
-    }
+    }*/
     
     var body: some View {
         VStack{
@@ -97,29 +97,7 @@ struct LightDetail: View {
             .padding(.horizontal)
             
             VStack {
-                HStack {
-                    Text("BRIGHTNESS")
-                        .font(.footnote)
-                        .fontWeight(.bold)
-                        .padding(.trailing)
-                    Text("\(Int(brightness*100)) %")
-                        .font(.footnote)
-                    Spacer()
-                }
-                .padding(.leading)
-                HStack{
-                    Image(systemName: "sun.min")
-                    //Slider(value: $brightness, in: 0...65535, step: 1)
-                    Slider(value: Binding(get: {
-                        self.brightness
-                    }, set: { (newVal) in
-                        self.brightness = newVal
-                        self.changeBrightness()
-                    }))
-                    Image(systemName: "sun.max")
-                        .imageScale(.large)
-                }
-                .padding(.horizontal)
+                HSBK(lightDevice: lightDevice)
             }
             .padding(.top)
             Spacer()
