@@ -27,15 +27,19 @@ struct LightList: View {
     // Property use by the View
     @State var showingAddLight = false
     
-    // Func
-    /*private func refreshLights() {
-        let adresses = lightDevice.map {$0.adresse}
-        
-        LIFXClient.getConnections(addresses: adresses as! [String], timeout: 0.25).done {
-            connections in
+    // Functions
+    private func removeLight(at offsets: IndexSet) {
+        for index in offsets {
+            let light = lightDevice[index]
+            managedObjectContext.delete(light)
             
+            do{
+                try managedObjectContext.save()
+            } catch{
+                print("Something wrong")
+            }
         }
-    }*/
+    }
     
     //Add Light button
     var addLightButton: some View {
@@ -60,10 +64,12 @@ struct LightList: View {
                     ) {
                         LightRow(lightDevice: light)
                     }
-                }
+                }.onDelete(perform: removeLight)
             }
             .navigationBarTitle(Text("Lights"))
-            .navigationBarItems(trailing: addLightButton)
+            .navigationBarItems(
+                leading: EditButton(),
+                trailing: addLightButton)
             .sheet(isPresented: $showingAddLight) {
                 AddLight().environment(\.managedObjectContext, self.managedObjectContext)
             }
