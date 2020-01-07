@@ -18,7 +18,7 @@ struct LightRow: View {
             Text("\(lightDevice.adresse ?? "No lights")")
             Spacer()
         }
-        .padding(.horizontal)
+        .padding()
     }
 }
 

@@ -27,26 +27,34 @@ struct ContentView: View {
     // Property use by the View
     @State var showingAddLight = false
     
+    // Func
+    
+    
+    //Add Light button
+    var addLightButton: some View {
+        Button(action: {
+            self.showingAddLight.toggle()
+            self.refreshConnection()
+        }) {
+            Image(systemName: "plus.circle")
+                .imageScale(.large)
+                .accessibility(label: Text("Add Light"))
+                .padding()
+        }
+    }
+    
     // Body
     var body: some View {
-        VStack {
-            HStack{
-                Button(action: {
-                    self.showingAddLight.toggle()
-                }) {
-                    HStack {
-                        Spacer()
-                        Text("Add Light")
-                    }
-                    .padding(.horizontal)
-                }.sheet(isPresented: $showingAddLight){
-                    AddLight().environment(\.managedObjectContext, self.managedObjectContext)
-                }
-            }
+        NavigationView{
             List {
                 ForEach(lightDevice){ light in
                     LightRow(lightDevice: light)
                 }
+            }
+            .navigationBarTitle(Text("Lights"))
+            .navigationBarItems(trailing: addLightButton)
+            .sheet(isPresented: $showingAddLight) {
+                AddLight().environment(\.managedObjectContext, self.managedObjectContext)
             }
         }
     }
@@ -55,5 +63,6 @@ struct ContentView: View {
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         ContentView()
-          .environment(\.managedObjectContext, (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext)    }
+          .environment(\.managedObjectContext, (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext)
+    }
 }
