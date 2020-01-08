@@ -21,6 +21,19 @@ struct HSBK: View {
     @State private var kelvin: Double = 3200
     
     
+    private func getInfoLight(){
+        LIFXClient.getLight(address: self.lightDevice.adresse!).done{
+            state in
+            self.brightness = CGFloat(state.state.color.brightness)/65535
+            self.hue = CGFloat(state.state.color.hue)/65535
+            self.saturation = CGFloat(state.state.color.saturation)/65535
+            self.kelvin = Double(state.state.color.kelvin)
+            
+            print(self.brightness)
+            }
+        }
+
+    
     func changeHSBK() {
         LIFXClient.connect(host: .ipv4(try!(IPv4Address(self.lightDevice.adresse!)))).then {
             client in
@@ -49,7 +62,7 @@ struct HSBK: View {
                 }, set: { (newVal) in
                     self.brightness = newVal
                     self.changeHSBK()
-                }), in: 0...1, step: 0.01)
+                }), in: 0...1, step: 0.05)
                 Image(systemName: "sun.max")
                     .imageScale(.large)
             }
@@ -74,7 +87,7 @@ struct HSBK: View {
                 }, set: { (newVal) in
                     self.hue = newVal
                     self.changeHSBK()
-                }), in: 0...1, step: 0.01)
+                }), in: 0...1, step: 0.05)
                 Image(systemName: "dial")
                     .imageScale(.large)
             }
@@ -100,7 +113,7 @@ struct HSBK: View {
                 }, set: { (newVal) in
                     self.saturation = newVal
                     self.changeHSBK()
-                }), in: 0...1, step: 0.01)
+                }), in: 0...1, step: 0.05)
                 Image(systemName: "circle.righthalf.fill")
                     .imageScale(.large)
             }
@@ -133,6 +146,8 @@ struct HSBK: View {
                        .padding(.horizontal)
                        }
                        .padding(.top)
+        }.onAppear{
+            self.getInfoLight()
         }
         
     }

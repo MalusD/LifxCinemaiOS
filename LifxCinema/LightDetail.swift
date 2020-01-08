@@ -19,21 +19,29 @@ struct LightDetail: View {
     @State private var labelEditing: Bool = false
     @State private var labelEditField: String = "Label"
     @State private var power: Bool = false
-    @State private var hue: Double = 0
-    @State private var saturation: Double = 0
-    //@State private var brightness: Float = 0
     
     private func endEditing() {
         UIApplication.shared.endEditing()
     }
     
-    /*func changeBrightness() {
-        print("SLider value changed to \(brightness)")
-        LIFXClient.connect(host: .ipv4(try!(IPv4Address(self.lightDevice.adresse!)))).then {
-            client in
-            return client.light.setColor(color: .init(red: CGFloat(self.brightness), green: CGFloat(self.brightness), blue: CGFloat(self.brightness), alpha: CGFloat(self.brightness)))
+   /* private func refreshLight(){
+        LIFXClient.connect(host: .ipv4(try!(IPv4Address(self.lightDevice.adresse!)))).then { client in
+            client.device.getLabel().done{
+                label in
+                self.labelEditField = label.label
+            }
         }
     }*/
+    
+    private func getInfo(){
+        LIFXClient.getLight(address: self.lightDevice.adresse!).done{
+            state in
+            self.labelEditField = state.state.label
+            if state.state.power == 65535{
+                self.power.toggle()
+            }
+        }
+    }
     
     var body: some View {
         VStack{
@@ -41,7 +49,7 @@ struct LightDetail: View {
                 .frame(height: 175)
                 .edgesIgnoringSafeArea(.top)
                 .shadow(radius: 10)
-                .foregroundColor(Color(hue: hue, saturation: saturation, brightness: 1))
+                .padding(.bottom, -43)
             HStack {
                 VStack(alignment: .leading){
                     HStack {
@@ -70,11 +78,11 @@ struct LightDetail: View {
                 }
                 Spacer()
                 Button(action: {
-                    self.power.toggle()
                     LIFXClient.connect(host: .ipv4(try!(IPv4Address(self.lightDevice.adresse!)))).then {
                         client in
                         return client.light.setPower(on: self.power)
                     }
+                    self.power.toggle()
                 }) {
                     if power{
                         Text("Power ON")
@@ -101,6 +109,8 @@ struct LightDetail: View {
             }
             .padding(.top)
             Spacer()
+        }.onAppear{
+            self.getInfo()
         }
         
     }
