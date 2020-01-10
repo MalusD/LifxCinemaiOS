@@ -8,17 +8,56 @@
 
 import SwiftUI
 import CoreData
+import Network
+import LIFXClient
+import PromiseKit
 
 struct LightRow: View {
     
     var lightDevice : LightDevice
     
+    @State private var label: String = "Label"
+    @State private var power: Bool = false
+    
+    private func getState(){
+        LIFXClient.getLight(address: lightDevice.adresse!).done{
+            state in
+            self.label = state.state.label
+            if state.state.power == 65535{
+                self.power = true
+            } else {
+                self.power = false
+            }
+            
+        }
+    }
+    
     var body: some View {
         HStack {
-            Text("\(lightDevice.adresse ?? "No lights")")
+            if self.power{
+            Image(systemName: "lightbulb")
+                .imageScale(.large)
+                .foregroundColor(.yellow)
+                .padding(.trailing, 4)
+            } else {
+                Image(systemName: "lightbulb.slash")
+                    .imageScale(.large)
+                    .foregroundColor(.primary)
+                    .padding(.trailing, 4)
+            }
+                Text(label)
+                    .font(.headline)
             Spacer()
+                Text("\(lightDevice.adresse ?? "No lights")")
+                    .font(.footnote)
+                    .italic()
+             
         }
         .padding()
+        .onAppear{
+            self.getState()
+        }
+       
     }
 }
 

@@ -43,6 +43,13 @@ struct LightDetail: View {
         }
     }
     
+    private func setNewLabel() {
+        LIFXClient.connect(host: .ipv4(try!(IPv4Address(self.lightDevice.adresse!)))).then {
+            client in
+            return client.device.setLabel(label: self.labelEditField)
+        }
+    }
+    
     var body: some View {
         VStack{
             RoundedRectangle(cornerRadius: 25)
