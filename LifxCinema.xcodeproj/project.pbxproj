@@ -234,11 +234,13 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-LifxCinema/Pods-LifxCinema-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/GCXMulticastDNSKit/GCXMulticastDNSKit.framework",
 				"${BUILT_PRODUCTS_DIR}/LIFXClient/LIFXClient.framework",
 				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GCXMulticastDNSKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LIFXClient.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
 			);

@@ -11,13 +11,48 @@ import LIFXClient
 import PromiseKit
 import Network
 
+/*enum PlusGreen: Int, CaseIterable, Identifiable, Hashable{
+    case noPreset
+    case eightPG
+    case quarterPG
+    case halfPG
+    case fullPG
+}
+
+extension PlusGreen{
+    
+    var id: UUID {
+        return UUID()
+    }
+    
+    var name: String{
+        switch(self){
+        case .noPreset:
+            return "No Preset"
+        case .eightPG:
+            return "1/8 +G"
+        case .quarterPG:
+            return "1/4 +G"
+        case .halfPG:
+            return "1/4 +G"
+        case .fullPG:
+            return "Full +G"
+        }
+    }
+}*/
+
 struct HSBK: View {
     
     var lightDevice: LightDevice
     
     var kelvinPresets = ["No presets", "3200", "4300", "5600", "6000"]
+    var plusGreenPresets = ["No Presets", "1/8 +G", "1/4 +G", "1/2 +G", "Full +G"]
+    var minusGreenPresets = ["No Presets", "1/8 -G", "1/4 -G", "1/2 -G", "Full -G"]
     
     @State private var getPreset = 0
+    @State private var selectedPGPresets = 0
+    @State private var selectedMGPresets = 0
+   // @State private var selectedPlusGreenPreset: PlusGreen = .noPreset
     
     @State private var brightness: CGFloat = 0
     @State private var hue: CGFloat = 0
@@ -32,8 +67,6 @@ struct HSBK: View {
             self.hue = CGFloat(state.state.color.hue)/65535
             self.saturation = CGFloat(state.state.color.saturation)/65535
             self.kelvin = Double(state.state.color.kelvin)
-            
-            print(self.brightness)
             }
         }
 
@@ -152,7 +185,7 @@ struct HSBK: View {
             }
             .padding(.top)
             VStack {
-                Picker(selection: $getPreset, label: Text("What is your favorite color?")) {
+                Picker(selection: $getPreset, label: Text("CCT presets")) {
                     ForEach(0..<kelvinPresets.count) { index in
                         Text(self.kelvinPresets[index]).tag(index)
                     }
@@ -166,6 +199,76 @@ struct HSBK: View {
                 }
             }
             .padding(.horizontal)
+            VStack {
+                Picker(selection: $selectedPGPresets, label: Text("Plus green presets")) {
+                    ForEach(0..<plusGreenPresets.count) { index in
+                        Text(self.plusGreenPresets[index]).tag(index)
+                    }
+                }
+                .pickerStyle(SegmentedPickerStyle())
+                .onReceive([self.selectedPGPresets].publisher.first()) { value in
+                    if value == 1 {
+                        self.hue = 114/360
+                        self.saturation = 4/100
+                        self.changeHSBK()
+                    }
+                    if value == 2 {
+                        self.hue = 80/360
+                        self.saturation = 10/100
+                        self.changeHSBK()
+                    }
+                    if value == 3 {
+                        self.hue = 77/360
+                        self.saturation = 11/100
+                        self.changeHSBK()
+                    }
+                    if value == 4 {
+                        self.hue = 80/360
+                        self.saturation = 24/100
+                        self.changeHSBK()
+                    }
+                }
+            }
+            .padding(.horizontal)
+            VStack {
+                Picker(selection: $selectedMGPresets, label: Text("Plus green presets")) {
+                    ForEach(0..<minusGreenPresets.count) { index in
+                        Text(self.minusGreenPresets[index]).tag(index)
+                    }
+                }
+                .pickerStyle(SegmentedPickerStyle())
+                .onReceive([self.selectedMGPresets].publisher.first()) { value in
+                    if value == 1 {
+                        self.hue = 340/360
+                        self.saturation = 5/100
+                        self.changeHSBK()
+                    }
+                    if value == 2 {
+                        self.hue = 347/360
+                        self.saturation = 7/100
+                        self.changeHSBK()
+                    }
+                    if value == 3 {
+                        self.hue = 356/360
+                        self.saturation = 11/100
+                        self.changeHSBK()
+                    }
+                    if value == 4 {
+                        self.hue = 338/360
+                        self.saturation = 22/100
+                        self.changeHSBK()
+                    }
+                }
+            }
+            .padding(.horizontal)
+           /* VStack{
+                Picker(selection: $selectedPlusGreenPreset, label: Text("Plus Green presets")){
+                    ForEach(PlusGreen.allCases) { preset in
+                        Text(preset.name).tag(preset)
+                    }
+                }
+                .pickerStyle(SegmentedPickerStyle())
+            }*/
         }
         .onAppear{
             self.getInfoLight()

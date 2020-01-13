@@ -19,7 +19,7 @@ struct LightRow: View {
     @State private var label: String = "Label"
     @State private var power: Bool = false
     
-    private func getState(){
+    func getState(){
         LIFXClient.getLight(address: lightDevice.adresse!).done{
             state in
             self.label = state.state.label

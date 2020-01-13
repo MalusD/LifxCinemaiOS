@@ -12,7 +12,6 @@ import LIFXClient
 import PromiseKit
 import Network
 
-
 struct LightList: View {
     
     // CoreData Environment
@@ -43,13 +42,20 @@ struct LightList: View {
     
     //Add Light button
     var addLightButton: some View {
+        HStack {
+            Button(action: {
+                self.showingAddLight.toggle()
+            }) {
+                Image(systemName: "plus.circle")
+                    .imageScale(.large)
+                    .accessibility(label: Text("Add Light"))
+            }
         Button(action: {
-            self.showingAddLight.toggle()
         }) {
-            Image(systemName: "plus.circle")
+            Image(systemName: "arrow.clockwise.circle")
                 .imageScale(.large)
-                .accessibility(label: Text("Add Light"))
-                .padding()
+                .accessibility(label: Text("Reload Data"))
+        }
         }
     }
     

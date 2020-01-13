@@ -71,6 +71,7 @@ struct LightDetail: View {
                         if labelEditing {
                             TextField("Label", text: $labelEditField){
                                 self.endEditing()
+                                self.setNewLabel()
                                 self.labelEditing.toggle()
                             }
                                 .font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/)
