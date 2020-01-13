@@ -19,6 +19,7 @@
 		8390A40C23C3C12B0026EAD5 /* LIFXClientExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8390A40B23C3C12B0026EAD5 /* LIFXClientExtensions.swift */; };
 		8390A40E23C3C1790026EAD5 /* PromiseKitExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8390A40D23C3C1790026EAD5 /* PromiseKitExtensions.swift */; };
 		8390A41023C3C2050026EAD5 /* NetworkExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8390A40F23C3C2050026EAD5 /* NetworkExtensions.swift */; };
+		8399A3AD23CCCB08008ED938 /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8399A3AC23CCCB08008ED938 /* ExternalAccessory.framework */; };
 		83B4CB0123C5317B009BE7DE /* HSBK.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B4CB0023C5317B009BE7DE /* HSBK.swift */; };
 		83C634A723C3EB61009D7394 /* AddLight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C634A623C3EB61009D7394 /* AddLight.swift */; };
 		83C634A923C3ECD0009D7394 /* LightRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C634A823C3ECD0009D7394 /* LightRow.swift */; };
@@ -41,6 +42,8 @@
 		8390A40B23C3C12B0026EAD5 /* LIFXClientExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIFXClientExtensions.swift; sourceTree = "<group>"; };
 		8390A40D23C3C1790026EAD5 /* PromiseKitExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromiseKitExtensions.swift; sourceTree = "<group>"; };
 		8390A40F23C3C2050026EAD5 /* NetworkExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkExtensions.swift; sourceTree = "<group>"; };
+		8399A3AB23CCCB08008ED938 /* LifxCinema.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LifxCinema.entitlements; sourceTree = "<group>"; };
+		8399A3AC23CCCB08008ED938 /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
 		83B4CB0023C5317B009BE7DE /* HSBK.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HSBK.swift; sourceTree = "<group>"; };
 		83C634A623C3EB61009D7394 /* AddLight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLight.swift; sourceTree = "<group>"; };
 		83C634A823C3ECD0009D7394 /* LightRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightRow.swift; sourceTree = "<group>"; };
@@ -53,6 +56,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8399A3AD23CCCB08008ED938 /* ExternalAccessory.framework in Frameworks */,
 				6B4E4E6A12EC69204CCF578C /* Pods_LifxCinema.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -90,6 +94,7 @@
 		831CD86E23C3BEAD0033A0C5 /* LifxCinema */ = {
 			isa = PBXGroup;
 			children = (
+				8399A3AB23CCCB08008ED938 /* LifxCinema.entitlements */,
 				831CD86F23C3BEAD0033A0C5 /* AppDelegate.swift */,
 				831CD87123C3BEAD0033A0C5 /* SceneDelegate.swift */,
 				831CD87623C3BEAD0033A0C5 /* LightList.swift */,
@@ -153,6 +158,7 @@
 		C22A332209286519AC22B2CB /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8399A3AC23CCCB08008ED938 /* ExternalAccessory.framework */,
 				3D48FDAA1B110B78F529C9AE /* Pods_LifxCinema.framework */,
 			);
 			name = Frameworks;
@@ -234,13 +240,11 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-LifxCinema/Pods-LifxCinema-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/GCXMulticastDNSKit/GCXMulticastDNSKit.framework",
 				"${BUILT_PRODUCTS_DIR}/LIFXClient/LIFXClient.framework",
 				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GCXMulticastDNSKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LIFXClient.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
 			);
@@ -422,6 +426,7 @@
 			baseConfigurationReference = 1D73E145F4188D13CBCC445B /* Pods-LifxCinema.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = LifxCinema/LifxCinema.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"LifxCinema/Preview Content\"";
 				DEVELOPMENT_TEAM = 6WSL76234Z;
@@ -443,6 +448,7 @@
 			baseConfigurationReference = D873EC563B540CF62208104C /* Pods-LifxCinema.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = LifxCinema/LifxCinema.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"LifxCinema/Preview Content\"";
 				DEVELOPMENT_TEAM = 6WSL76234Z;
