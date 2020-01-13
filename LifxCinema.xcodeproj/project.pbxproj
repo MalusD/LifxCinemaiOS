@@ -7,25 +7,48 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6B4E4E6A12EC69204CCF578C /* Pods_LifxCinema.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3D48FDAA1B110B78F529C9AE /* Pods_LifxCinema.framework */; };
 		831CD87023C3BEAD0033A0C5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831CD86F23C3BEAD0033A0C5 /* AppDelegate.swift */; };
 		831CD87223C3BEAD0033A0C5 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831CD87123C3BEAD0033A0C5 /* SceneDelegate.swift */; };
 		831CD87523C3BEAD0033A0C5 /* LifxCinema.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 831CD87323C3BEAD0033A0C5 /* LifxCinema.xcdatamodeld */; };
-		831CD87723C3BEAD0033A0C5 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831CD87623C3BEAD0033A0C5 /* ContentView.swift */; };
+		831CD87723C3BEAD0033A0C5 /* LightList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 831CD87623C3BEAD0033A0C5 /* LightList.swift */; };
 		831CD87923C3BEAE0033A0C5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 831CD87823C3BEAE0033A0C5 /* Assets.xcassets */; };
 		831CD87C23C3BEAE0033A0C5 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 831CD87B23C3BEAE0033A0C5 /* Preview Assets.xcassets */; };
 		831CD87F23C3BEAE0033A0C5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 831CD87D23C3BEAE0033A0C5 /* LaunchScreen.storyboard */; };
+		8358C19723C4C5E0004B2C5E /* LightDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8358C19623C4C5E0004B2C5E /* LightDetail.swift */; };
+		8390A40C23C3C12B0026EAD5 /* LIFXClientExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8390A40B23C3C12B0026EAD5 /* LIFXClientExtensions.swift */; };
+		8390A40E23C3C1790026EAD5 /* PromiseKitExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8390A40D23C3C1790026EAD5 /* PromiseKitExtensions.swift */; };
+		8390A41023C3C2050026EAD5 /* NetworkExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8390A40F23C3C2050026EAD5 /* NetworkExtensions.swift */; };
+		8399A3AD23CCCB08008ED938 /* ExternalAccessory.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8399A3AC23CCCB08008ED938 /* ExternalAccessory.framework */; };
+		83B4CB0123C5317B009BE7DE /* HSBK.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83B4CB0023C5317B009BE7DE /* HSBK.swift */; };
+		83C634A723C3EB61009D7394 /* AddLight.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C634A623C3EB61009D7394 /* AddLight.swift */; };
+		83C634A923C3ECD0009D7394 /* LightRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C634A823C3ECD0009D7394 /* LightRow.swift */; };
+		83C634AB23C3EE17009D7394 /* LightDeviceExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 83C634AA23C3EE17009D7394 /* LightDeviceExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		1D73E145F4188D13CBCC445B /* Pods-LifxCinema.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LifxCinema.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LifxCinema/Pods-LifxCinema.debug.xcconfig"; sourceTree = "<group>"; };
+		3D48FDAA1B110B78F529C9AE /* Pods_LifxCinema.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LifxCinema.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		831CD86C23C3BEAD0033A0C5 /* LifxCinema.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LifxCinema.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		831CD86F23C3BEAD0033A0C5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		831CD87123C3BEAD0033A0C5 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		831CD87423C3BEAD0033A0C5 /* LifxCinema.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LifxCinema.xcdatamodel; sourceTree = "<group>"; };
-		831CD87623C3BEAD0033A0C5 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		831CD87623C3BEAD0033A0C5 /* LightList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightList.swift; sourceTree = "<group>"; };
 		831CD87823C3BEAE0033A0C5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		831CD87B23C3BEAE0033A0C5 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		831CD87E23C3BEAE0033A0C5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		831CD88023C3BEAE0033A0C5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8358C19623C4C5E0004B2C5E /* LightDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightDetail.swift; sourceTree = "<group>"; };
+		8390A40B23C3C12B0026EAD5 /* LIFXClientExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LIFXClientExtensions.swift; sourceTree = "<group>"; };
+		8390A40D23C3C1790026EAD5 /* PromiseKitExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromiseKitExtensions.swift; sourceTree = "<group>"; };
+		8390A40F23C3C2050026EAD5 /* NetworkExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkExtensions.swift; sourceTree = "<group>"; };
+		8399A3AB23CCCB08008ED938 /* LifxCinema.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LifxCinema.entitlements; sourceTree = "<group>"; };
+		8399A3AC23CCCB08008ED938 /* ExternalAccessory.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ExternalAccessory.framework; path = System/Library/Frameworks/ExternalAccessory.framework; sourceTree = SDKROOT; };
+		83B4CB0023C5317B009BE7DE /* HSBK.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HSBK.swift; sourceTree = "<group>"; };
+		83C634A623C3EB61009D7394 /* AddLight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddLight.swift; sourceTree = "<group>"; };
+		83C634A823C3ECD0009D7394 /* LightRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightRow.swift; sourceTree = "<group>"; };
+		83C634AA23C3EE17009D7394 /* LightDeviceExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LightDeviceExtensions.swift; sourceTree = "<group>"; };
+		D873EC563B540CF62208104C /* Pods-LifxCinema.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LifxCinema.release.xcconfig"; path = "Pods/Target Support Files/Pods-LifxCinema/Pods-LifxCinema.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -33,17 +56,30 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8399A3AD23CCCB08008ED938 /* ExternalAccessory.framework in Frameworks */,
+				6B4E4E6A12EC69204CCF578C /* Pods_LifxCinema.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		6FD3C131D2C9D84ECC32BA8D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1D73E145F4188D13CBCC445B /* Pods-LifxCinema.debug.xcconfig */,
+				D873EC563B540CF62208104C /* Pods-LifxCinema.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		831CD86323C3BEAD0033A0C5 = {
 			isa = PBXGroup;
 			children = (
 				831CD86E23C3BEAD0033A0C5 /* LifxCinema */,
 				831CD86D23C3BEAD0033A0C5 /* Products */,
+				6FD3C131D2C9D84ECC32BA8D /* Pods */,
+				C22A332209286519AC22B2CB /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -58,13 +94,18 @@
 		831CD86E23C3BEAD0033A0C5 /* LifxCinema */ = {
 			isa = PBXGroup;
 			children = (
+				8399A3AB23CCCB08008ED938 /* LifxCinema.entitlements */,
 				831CD86F23C3BEAD0033A0C5 /* AppDelegate.swift */,
 				831CD87123C3BEAD0033A0C5 /* SceneDelegate.swift */,
-				831CD87623C3BEAD0033A0C5 /* ContentView.swift */,
-				831CD87823C3BEAE0033A0C5 /* Assets.xcassets */,
-				831CD87D23C3BEAE0033A0C5 /* LaunchScreen.storyboard */,
+				831CD87623C3BEAD0033A0C5 /* LightList.swift */,
+				8358C19623C4C5E0004B2C5E /* LightDetail.swift */,
+				83C634A823C3ECD0009D7394 /* LightRow.swift */,
+				83C634A623C3EB61009D7394 /* AddLight.swift */,
+				83B4CAFF23C53163009BE7DE /* SupportingViews */,
+				8390A40823C3C0F50026EAD5 /* Model */,
+				8390A40A23C3C1030026EAD5 /* Extensions */,
+				8390A40923C3C0FC0026EAD5 /* Ressources */,
 				831CD88023C3BEAE0033A0C5 /* Info.plist */,
-				831CD87323C3BEAD0033A0C5 /* LifxCinema.xcdatamodeld */,
 				831CD87A23C3BEAE0033A0C5 /* Preview Content */,
 			);
 			path = LifxCinema;
@@ -78,6 +119,51 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		8390A40823C3C0F50026EAD5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		8390A40923C3C0FC0026EAD5 /* Ressources */ = {
+			isa = PBXGroup;
+			children = (
+				831CD87823C3BEAE0033A0C5 /* Assets.xcassets */,
+				831CD87D23C3BEAE0033A0C5 /* LaunchScreen.storyboard */,
+				831CD87323C3BEAD0033A0C5 /* LifxCinema.xcdatamodeld */,
+			);
+			path = Ressources;
+			sourceTree = "<group>";
+		};
+		8390A40A23C3C1030026EAD5 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8390A40B23C3C12B0026EAD5 /* LIFXClientExtensions.swift */,
+				8390A40F23C3C2050026EAD5 /* NetworkExtensions.swift */,
+				8390A40D23C3C1790026EAD5 /* PromiseKitExtensions.swift */,
+				83C634AA23C3EE17009D7394 /* LightDeviceExtensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		83B4CAFF23C53163009BE7DE /* SupportingViews */ = {
+			isa = PBXGroup;
+			children = (
+				83B4CB0023C5317B009BE7DE /* HSBK.swift */,
+			);
+			path = SupportingViews;
+			sourceTree = "<group>";
+		};
+		C22A332209286519AC22B2CB /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8399A3AC23CCCB08008ED938 /* ExternalAccessory.framework */,
+				3D48FDAA1B110B78F529C9AE /* Pods_LifxCinema.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -85,9 +171,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 831CD88323C3BEAE0033A0C5 /* Build configuration list for PBXNativeTarget "LifxCinema" */;
 			buildPhases = (
+				640A6E8D79482A96F2BBB834 /* [CP] Check Pods Manifest.lock */,
 				831CD86823C3BEAD0033A0C5 /* Sources */,
 				831CD86923C3BEAD0033A0C5 /* Frameworks */,
 				831CD86A23C3BEAD0033A0C5 /* Resources */,
+				302C6CF90DEE5BA5A80A2CDE /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -144,15 +232,64 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		302C6CF90DEE5BA5A80A2CDE /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-LifxCinema/Pods-LifxCinema-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/LIFXClient/LIFXClient.framework",
+				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/LIFXClient.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LifxCinema/Pods-LifxCinema-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		640A6E8D79482A96F2BBB834 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LifxCinema-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		831CD86823C3BEAD0033A0C5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				831CD87523C3BEAD0033A0C5 /* LifxCinema.xcdatamodeld in Sources */,
+				8390A40C23C3C12B0026EAD5 /* LIFXClientExtensions.swift in Sources */,
+				83C634AB23C3EE17009D7394 /* LightDeviceExtensions.swift in Sources */,
+				83C634A723C3EB61009D7394 /* AddLight.swift in Sources */,
+				83B4CB0123C5317B009BE7DE /* HSBK.swift in Sources */,
+				8390A40E23C3C1790026EAD5 /* PromiseKitExtensions.swift in Sources */,
 				831CD87023C3BEAD0033A0C5 /* AppDelegate.swift in Sources */,
-				831CD87723C3BEAD0033A0C5 /* ContentView.swift in Sources */,
+				831CD87723C3BEAD0033A0C5 /* LightList.swift in Sources */,
 				831CD87223C3BEAD0033A0C5 /* SceneDelegate.swift in Sources */,
+				8358C19723C4C5E0004B2C5E /* LightDetail.swift in Sources */,
+				8390A41023C3C2050026EAD5 /* NetworkExtensions.swift in Sources */,
+				83C634A923C3ECD0009D7394 /* LightRow.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -286,8 +423,10 @@
 		};
 		831CD88423C3BEAE0033A0C5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1D73E145F4188D13CBCC445B /* Pods-LifxCinema.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = LifxCinema/LifxCinema.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"LifxCinema/Preview Content\"";
 				DEVELOPMENT_TEAM = 6WSL76234Z;
@@ -306,8 +445,10 @@
 		};
 		831CD88523C3BEAE0033A0C5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = D873EC563B540CF62208104C /* Pods-LifxCinema.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = LifxCinema/LifxCinema.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "\"LifxCinema/Preview Content\"";
 				DEVELOPMENT_TEAM = 6WSL76234Z;
