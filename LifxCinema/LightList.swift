@@ -80,10 +80,6 @@ struct LightList: View {
             .sheet(isPresented: $showingAddLight) {
                 AddLight().environment(\.managedObjectContext, self.managedObjectContext)
             }
-        }.onAppear{
-            let interfaces = Interface.allInterfaces()
-            print(interfaces.count)
-            print(interfaces[1].address)
         }
     }
 }
