@@ -48,9 +48,15 @@ struct LightRow: View {
                 Text(label)
                     .font(.headline)
             Spacer()
+            if label == "Label"{
+                Text("Not connected")
+                    .font(.footnote)
+                    .italic()
+            } else {
                 Text("\(lightDevice.adresse ?? "No lights")")
                     .font(.footnote)
                     .italic()
+            }
              
         }
         .padding()

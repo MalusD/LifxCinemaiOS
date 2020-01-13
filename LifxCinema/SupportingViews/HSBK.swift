@@ -15,6 +15,10 @@ struct HSBK: View {
     
     var lightDevice: LightDevice
     
+    var kelvinPresets = ["No presets", "3200", "4300", "5600", "6000"]
+    
+    @State private var getPreset = 0
+    
     @State private var brightness: CGFloat = 0
     @State private var hue: CGFloat = 0
     @State private var saturation: CGFloat = 0
@@ -22,7 +26,7 @@ struct HSBK: View {
     
     
     private func getInfoLight(){
-        LIFXClient.getLight(address: self.lightDevice.adresse!).done{
+        _ = LIFXClient.getLight(address: self.lightDevice.adresse!).done{
             state in
             self.brightness = CGFloat(state.state.color.brightness)/65535
             self.hue = CGFloat(state.state.color.hue)/65535
@@ -55,18 +59,18 @@ struct HSBK: View {
                 }
                 .padding(.leading)
             
-            HStack{
-                Image(systemName: "sun.min")
-                Slider(value: Binding(get: {
-                    self.brightness
-                }, set: { (newVal) in
-                    self.brightness = newVal
-                    self.changeHSBK()
-                }), in: 0...1, step: 0.05)
-                Image(systemName: "sun.max")
-                    .imageScale(.large)
-            }
-            .padding(.horizontal)
+                HStack{
+                    Image(systemName: "sun.min")
+                    Slider(value: Binding(get: {
+                        self.brightness
+                    }, set: { (newVal) in
+                        self.brightness = newVal
+                        self.changeHSBK()
+                    }), in: 0...1, step: 0.01)
+                    Image(systemName: "sun.max")
+                        .imageScale(.large)
+                }
+                .padding(.horizontal)
             }
             VStack {
                 HStack {
@@ -80,18 +84,19 @@ struct HSBK: View {
                 }
                 .padding(.leading)
             
-            HStack{
-                Image(systemName: "dial")
-                Slider(value: Binding(get: {
-                    self.hue
-                }, set: { (newVal) in
-                    self.hue = newVal
-                    self.changeHSBK()
-                }), in: 0...1, step: 0.05)
-                Image(systemName: "dial")
-                    .imageScale(.large)
-            }
-            .padding(.horizontal)
+                HStack{
+                    Image(systemName: "dial")
+                    Slider(value: Binding(get: {
+                        self.hue
+                    }, set: { (newVal) in
+                        self.hue = newVal
+                        self.changeHSBK()
+                    }), in: 0...1, step: 0.01)
+                    Image(systemName: "dial")
+                        .imageScale(.large)
+                        .rotation3DEffect(.degrees(180), axis: (x: 0, y: 1, z: 0))
+                }
+                .padding(.horizontal)
             }
             .padding(.top)
             VStack {
@@ -106,50 +111,65 @@ struct HSBK: View {
                 }
                 .padding(.leading)
             
-            HStack{
-                Image(systemName: "circle.lefthalf.fill")
-                Slider(value: Binding(get: {
-                    self.saturation
-                }, set: { (newVal) in
-                    self.saturation = newVal
-                    self.changeHSBK()
-                }), in: 0...1, step: 0.05)
-                Image(systemName: "circle.righthalf.fill")
-                    .imageScale(.large)
-            }
-            .padding(.horizontal)
+                HStack{
+                    Image(systemName: "circle.lefthalf.fill")
+                    Slider(value: Binding(get: {
+                        self.saturation
+                    }, set: { (newVal) in
+                        self.saturation = newVal
+                        self.changeHSBK()
+                    }), in: 0...1, step: 0.01)
+                    Image(systemName: "circle.righthalf.fill")
+                        .imageScale(.large)
+                }
+                .padding(.horizontal)
             }
             .padding(.top)
             VStack {
-                    HStack {
-                        Text("CCT")
-                            .font(.footnote)
-                            .fontWeight(.bold)
-                            .padding(.trailing)
-                        Text("\(Int(kelvin)) K")
-                            .font(.footnote)
-                            Spacer()
-                           }
-                           .padding(.leading)
-                       
-                       HStack{
-                           Image(systemName: "plus.circle")
-                           Slider(value: Binding(get: {
-                               self.kelvin
-                           }, set: { (newVal) in
-                               self.kelvin = newVal
-                               self.changeHSBK()
-                           }), in: 2500...9000, step: 100)
-                           Image(systemName: "minus.circle")
-                               .imageScale(.large)
+                HStack {
+                    Text("CCT")
+                        .font(.footnote)
+                        .fontWeight(.bold)
+                        .padding(.trailing)
+                    Text("\(Int(kelvin)) K")
+                        .font(.footnote)
+                        Spacer()
                        }
-                       .padding(.horizontal)
-                       }
-                       .padding(.top)
-        }.onAppear{
+                       .padding(.leading)
+                   
+                   HStack{
+                       Image(systemName: "plus.circle")
+                       Slider(value: Binding(get: {
+                           self.kelvin
+                       }, set: { (newVal) in
+                           self.kelvin = newVal
+                           self.changeHSBK()
+                       }), in: 2500...9000, step: 100)
+                       Image(systemName: "minus.circle")
+                           .imageScale(.large)
+                   }
+                   .padding(.horizontal)
+            }
+            .padding(.top)
+            VStack {
+                Picker(selection: $getPreset, label: Text("What is your favorite color?")) {
+                    ForEach(0..<kelvinPresets.count) { index in
+                        Text(self.kelvinPresets[index]).tag(index)
+                    }
+                }
+                .pickerStyle(SegmentedPickerStyle())
+                .onReceive([self.getPreset].publisher.first()) { value in
+                    if value != 0 {
+                        self.kelvin = Double(self.kelvinPresets[value])!
+                        self.changeHSBK()
+                    }
+                }
+            }
+            .padding(.horizontal)
+        }
+        .onAppear{
             self.getInfoLight()
         }
-        
     }
 }
 

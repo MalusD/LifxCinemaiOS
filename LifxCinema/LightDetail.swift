@@ -52,11 +52,11 @@ struct LightDetail: View {
     
     var body: some View {
         VStack{
-            RoundedRectangle(cornerRadius: 25)
+            /*RoundedRectangle(cornerRadius: 25)
                 .frame(height: 175)
                 .edgesIgnoringSafeArea(.top)
                 .shadow(radius: 10)
-                .padding(.bottom, -43)
+                .padding(.bottom, -43)*/
             HStack {
                 VStack(alignment: .leading){
                     HStack {
